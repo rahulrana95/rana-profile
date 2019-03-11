@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - node
+cache:
+  yarn: true
+  directories:
+    - node_modules
+deploy:
+  provider: s3
+  access_key_id: AKIAI5ARM7YLJ5U33OJQ
+  secret_access_key: 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
+  bucket: "rahulrana"
+  acl: public_read
+  skip_cleanup: true
