@@ -1,14 +1,15 @@
 language: node_js
 node_js:
-  - node
+- node
 cache:
   yarn: true
   directories:
-    - node_modules
+  - node_modules
 deploy:
   provider: s3
   access_key_id: AKIAI5ARM7YLJ5U33OJQ
-  secret_access_key: 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
-  bucket: "rahulrana"
+  secret_access_key:
+    secure: YH533CPtb+ORBIHy0gNS9N2JRfredif7F+e5dEk6R0/n0D65F8Y0rymU9t0Ju4UbC7mVSaL/D9ujSMxdqaZp0kRwatsYQtCVm4BhKrjsybtTAXnOIzKvPECUMZxEWJcSl35g4dK8ElStXaU+rA2DBF6IDGenX6zC7cz/qIt4oVxG1li6+aJybp0a3U/qSoLyKgPT16T1AMz54n+zfHsfDoUXHuy1er7jTmMt0VmWczgtMmbrrd3kY+U9OTt3xsx9M2kufQ9GXn5AaCN3Z2r4yhLvY2/Dm0l5CAbPPrX2e+1+0VlVvOSrn/qU969yLf0cMkfR5PGxAEt/DT6bpgLKtMqujy4m/ztVkSvbMeJLQcgjlNcTT4cUK70WvqGhljjdGDKlnC2icBHqSBPRkKOv7ZYRRaUR30mFirQb/XFV308ydNEIPtpEWOja9Ewd/ZoepTJfHALBroQiHwRLurDItAR2okBSpV1L5j8IMAjPWJ9WoAR1sETkEdN5qQSvXXE+1Aw6Lflqk0/mFafC/h9HyU3XF19R48sHfSE+ebw5vw0tXdHa4CzlJUc56tfowUxwuRSFhSJt2tH8ZLcSQwyqdxUszjyUgCgTHcrHhR4tDf+fE3T1JIKpbc5NpkwAIN5/Iw8EML70E2/4dYcIoE4cAAPPMZ4G3r0Ljn72/XH7va8=
+  bucket: rahulrana
   acl: public_read
   skip_cleanup: true
