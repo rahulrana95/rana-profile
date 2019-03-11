@@ -2,7 +2,6 @@ language: node_js
 node_js:
   - node
 script:
-  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bash ./travis/run_on_pull_requests; fi'
   - npm run build
 cache:
   yarn: true
