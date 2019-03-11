@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - node
+  script:
+  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bash ./travis/run_on_pull_requests; fi'
+  - npm run build
 cache:
   yarn: true
   directories:
@@ -12,3 +15,8 @@ deploy:
   bucket: rahulrana
   acl: public_read
   skip_cleanup: true
+  local_dir: build
+
+branches:
+  only:
+    - production
