@@ -18,4 +18,5 @@ deploy:
 
 branches:
   only:
+    - master
     - production
