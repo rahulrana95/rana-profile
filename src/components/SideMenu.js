@@ -6,20 +6,20 @@ import colors from "../constants/colors";
 
 const Container = styled.div`
   color: ${colors.primaryText};
-  overflow: scroll;
+  overflow-y: scroll;
   position: relative;
   width: 25%;
-  border: 1px solid green;
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
+  height: 100%;
+  overflow-x: hidden;
   background-size: cover;
   background-image: url(http://www.pauldowe.com/wp-content/uploads/2018/06/redgate-beach-sunset-2a.jpg);
   ::-webkit-scrollbar {
     width: 0 !important;
   }
-  z-index: -111;
 
   .child {
     position: relative;
