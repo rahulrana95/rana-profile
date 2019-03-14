@@ -4,7 +4,7 @@ node_js:
 script:
   - npm run build
 cache:
-  yarn: true
+  yarn: false
   directories:
     - node_modules
 deploy:
@@ -16,7 +16,7 @@ deploy:
   skip_cleanup: true
   local_dir: build
   on:
-    branch: production
+    branch: master
 
 branches:
   only:
