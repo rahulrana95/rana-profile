@@ -14,18 +14,21 @@ export default {
   menu: [
     {
       label: "PORTFOLIO",
-      route: "/portfolio",
-      component: Portfolio
+      route: "/",
+      component: Portfolio,
+      exact:true
     },
     {
       label: "SKILLS & OFFER",
       route: "/skills",
-      component: Skills
+      component: Skills,
+      exact:true
     },
     {
       label: "MY TALKS",
       route: "/my-talks",
-      component: MyTalks
+      component: MyTalks,
+      exact:true
     },
     // {
     //   label: "PERSONAL BLOGS",

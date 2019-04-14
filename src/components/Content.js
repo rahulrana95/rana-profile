@@ -20,11 +20,17 @@ class Content extends Component {
     return (
       <Container>
         {data.menu.map((menuItem, index) => {
+          const Props = {};
+          if (menuItem.exact) {
+            Props.exact=true;
+          }
           return (
             <Route
               path={menuItem.route}
               component={menuItem.component}
               key={index}
+              {...Props}
+              
             />
           );
         })}

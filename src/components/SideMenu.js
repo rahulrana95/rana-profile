@@ -157,7 +157,7 @@ class SideMenu extends Component {
                 return (
                   <li key={index}>
                     <NavLink
-                      activeClassName="activeLink"
+                      activeClassName={window.location.pathname == menuItem.route ? "activeLink" : ""}
                       onClick={() => console.log("Clicked route")}
                       style={{
                         textDecoration: "none",
