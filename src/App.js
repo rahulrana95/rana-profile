@@ -12,7 +12,12 @@ const Container = styled.div`
   h2 {
     margin: 0px;
   }
+  
+  font-family: 'Roboto', sans-serif;
+
+  background-color: #ece6e6;
 `;
+
 class App extends Component {
   render() {
     return (

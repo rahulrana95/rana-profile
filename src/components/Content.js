@@ -12,6 +12,7 @@ const Container = styled.div`
   right: 0;
   top: 0;
   padding: 50px;
+  background-color: white;
 `;
 
 class Content extends Component {

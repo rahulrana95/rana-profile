@@ -3,6 +3,11 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import data from "../constants/info";
 import colors from "../constants/colors";
+import ocean from "../images/ocean-bg.jpg";
+import profile from "../images/profile-pic.jpeg";
+import ln from "../images/linkedin-logo.svg";
+import insta from "../images/instagram-logo.svg";
+import skype from "../images/skype-logo.svg";
 
 const Container = styled.div`
   color: ${colors.primaryText};
@@ -16,7 +21,7 @@ const Container = styled.div`
   height: 100%;
   overflow-x: hidden;
   background-size: cover;
-  background-image: url(http://www.pauldowe.com/wp-content/uploads/2018/06/redgate-beach-sunset-2a.jpg);
+  background-image: url(${ocean});
   ::-webkit-scrollbar {
     width: 0 !important;
   }
@@ -62,12 +67,12 @@ const Container = styled.div`
     text-transform: uppercase;
   }
 
-  .ul {
+  .ul{
     list-style: none;
     text-align: left;
   }
   .ul li {
-    margin: 20px 0px 0px 0px;
+    margin: 20px 0px 0px 20px;
     position: relative;
   }
 
@@ -87,6 +92,17 @@ const Container = styled.div`
     right: 0;
     position: absolute;
   }
+
+  .social {
+    display: flex;
+    padding-left: 0px;
+    list-style:none;
+    a {
+      text-decoration: none;
+    }
+
+    color: white !important;
+  }
 `;
 
 const Img = styled.img`
@@ -96,7 +112,7 @@ const Img = styled.img`
 `;
 
 const Avatar = props => {
-  return <Img src={props.img} radius="30px" />;
+  return <Img src={props.img} style={{width:"200px", height:"160px"}}  radius="600px" />;
 };
 
 const Header = () => {
@@ -104,9 +120,7 @@ const Header = () => {
     <div style={{ padding: "10px" }}>
       <div>
         <Avatar
-          img={
-            "https://cdn-images-1.medium.com/max/1200/1*YSsYXHSaMWKEebr1CGowOw.jpeg"
-          }
+          img={profile}
         />
       </div>
       <div
@@ -159,11 +173,12 @@ class SideMenu extends Component {
             </ul>
           </div>
 
-          <div>
-            <ul className="ul">
-              <li>Linkedin</li>
-              <li>Linkedin</li>
-              <li>Linkedin</li>
+          <div className="ul" style={{textAlign:"left", marginLeft:"40px"}}>
+            <h4 style={{marginLeft:"20px"}}>Get In Touch</h4>
+            <ul className="social">
+              <li><a href="https://www.linkedin.com/in/rahul-rana-b713499a/" target="_blank"></a></li>
+              <li><a href="https://www.facebook.com/3rahul4" target="_blank">Fb</a></li>
+              <li><a href="https://twitter.com/rahulrana_95" target="_blank">Tw</a></li>
             </ul>
           </div>
         </div>

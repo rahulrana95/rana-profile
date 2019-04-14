@@ -27,20 +27,20 @@ export default {
       route: "/my-talks",
       component: MyTalks
     },
-    {
-      label: "PERSONAL BLOGS",
-      route: "/blog",
-      component: PersonalBlogs
-    },
-    {
-      label: "MY CV",
-      route: "/cv",
-      component: Mycv
-    },
-    {
-      label: "CONTACT ME",
-      route: "/contact-me",
-      component: ContactMe
-    }
+    // {
+    //   label: "PERSONAL BLOGS",
+    //   route: "/blog",
+    //   component: PersonalBlogs
+    // },
+    // {
+    //   label: "MY CV",
+    //   route: "/cv",
+    //   component: Mycv
+    // },
+    // {
+    //   label: "CONTACT ME",
+    //   route: "/contact-me",
+    //   component: ContactMe
+    // }
   ]
 };
