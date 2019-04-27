@@ -13,27 +13,27 @@ export default {
   },
   menu: [
     {
-      label: "PORTFOLIO",
+      label: "PERSONAL BLOGS",
       route: "/",
+      component: PersonalBlogs
+    },
+    {
+      label: "PORTFOLIO",
+      route: "/portfolio",
       component: Portfolio,
-      exact:true
+      exact: true
     },
     {
       label: "SKILLS & OFFER",
       route: "/skills",
       component: Skills,
-      exact:true
-    },
-    {
-      label: "MY TALKS",
-      route: "/my-talks",
-      component: MyTalks,
-      exact:true
-    },
+      exact: true
+    }
     // {
-    //   label: "PERSONAL BLOGS",
-    //   route: "/blog",
-    //   component: PersonalBlogs
+    //   label: "MY TALKS",
+    //   route: "/my-talks",
+    //   component: MyTalks,
+    //   exact:true
     // },
     // {
     //   label: "MY CV",

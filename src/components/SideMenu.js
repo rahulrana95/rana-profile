@@ -8,6 +8,7 @@ import profile from "../images/profile-pic.jpeg";
 import ln from "../images/linkedin-logo.svg";
 import insta from "../images/instagram-logo.svg";
 import skype from "../images/skype-logo.svg";
+import linkedinLogo from "../images/linkedin-logo.svg";
 
 const Container = styled.div`
   color: ${colors.primaryText};
@@ -67,7 +68,7 @@ const Container = styled.div`
     text-transform: uppercase;
   }
 
-  .ul{
+  .ul {
     list-style: none;
     text-align: left;
   }
@@ -96,7 +97,7 @@ const Container = styled.div`
   .social {
     display: flex;
     padding-left: 0px;
-    list-style:none;
+    list-style: none;
     a {
       text-decoration: none;
     }
@@ -112,16 +113,20 @@ const Img = styled.img`
 `;
 
 const Avatar = props => {
-  return <Img src={props.img} style={{width:"200px", height:"160px"}}  radius="600px" />;
+  return (
+    <Img
+      src={props.img}
+      style={{ width: "200px", height: "160px" }}
+      radius="600px"
+    />
+  );
 };
 
 const Header = () => {
   return (
     <div style={{ padding: "10px" }}>
       <div>
-        <Avatar
-          img={profile}
-        />
+        <Avatar img={profile} />
       </div>
       <div
         style={{
@@ -157,7 +162,11 @@ class SideMenu extends Component {
                 return (
                   <li key={index}>
                     <NavLink
-                      activeClassName={window.location.pathname == menuItem.route ? "activeLink" : ""}
+                      activeClassName={
+                        window.location.pathname == menuItem.route
+                          ? "activeLink"
+                          : ""
+                      }
                       onClick={() => console.log("Clicked route")}
                       style={{
                         textDecoration: "none",
@@ -173,12 +182,28 @@ class SideMenu extends Component {
             </ul>
           </div>
 
-          <div className="ul" style={{textAlign:"left", marginLeft:"40px"}}>
-            <h4 style={{marginLeft:"20px"}}>Get In Touch</h4>
+          <div className="ul" style={{ textAlign: "left", marginLeft: "40px" }}>
+            <h4 style={{ marginLeft: "20px" }}>Get In Touch</h4>
             <ul className="social">
-              <li><a href="https://www.linkedin.com/in/rahul-rana-b713499a/" target="_blank"></a></li>
-              <li><a href="https://www.facebook.com/3rahul4" target="_blank">Fb</a></li>
-              <li><a href="https://twitter.com/rahulrana_95" target="_blank">Tw</a></li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/rahul-rana-b713499a/"
+                  target="_blank"
+                  style={{ color: "white" }}
+                >
+                  <img src={linkedinLogo} width="50px" height="50px" />
+                </a>
+              </li>
+              {/* <li>
+                <a href="https://www.facebook.com/3rahul4" target="_blank">
+                  Fb
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/rahulrana_95" target="_blank">
+                  Tw
+                </a>
+              </li> */}
             </ul>
           </div>
         </div>
