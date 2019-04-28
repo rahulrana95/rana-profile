@@ -15,20 +15,21 @@ export default {
     {
       label: "PERSONAL BLOGS",
       route: "/",
-      component: PersonalBlogs
+      component: PersonalBlogs,
+      exact: true
     },
     {
       label: "PORTFOLIO",
       route: "/portfolio",
       component: Portfolio,
       exact: true
-    },
-    {
-      label: "SKILLS & OFFER",
-      route: "/skills",
-      component: Skills,
-      exact: true
     }
+    // {
+    //   label: "SKILLS & OFFER",
+    //   route: "/skills",
+    //   component: Skills,
+    //   exact: true
+    // }
     // {
     //   label: "MY TALKS",
     //   route: "/my-talks",

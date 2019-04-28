@@ -1,5 +1,14 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 
+const Container = styled.div`
+  .articles {
+    text-align: left;
+  }
+  .articles li {
+    list-style: none;
+  }
+`;
 class PersonalBlogs extends Component {
   constructor(props) {
     super(props);
@@ -44,14 +53,23 @@ class PersonalBlogs extends Component {
   }
   render() {
     return (
-      <div>
+      <Container>
         <h3>Blogs/Articles</h3>
-        <div>
+        {this.state.dataIsLoading ? <div>Loading ...</div> : null}
+        <div className="articles">
           {this.state.mediumArticles.map(article => {
-            return "Hi";
+            return (
+              <li>
+                {" "}
+                <h3>{article.title}</h3>
+                <img src={article.thumbnail} width="500px" />
+                <div>Published on : {article.pubDate}</div>
+                <a href={article.link}>Read Article</a>
+              </li>
+            );
           })}
         </div>
-      </div>
+      </Container>
     );
   }
 }
