@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "78aeebb464f7820b3b21",
+    "revision": "60f5fa2a2e60be6f79a5",
     "url": "/static/css/main.fa6730fb.chunk.css"
   },
   {
-    "revision": "78aeebb464f7820b3b21",
-    "url": "/static/js/main.64ab14d6.chunk.js"
+    "revision": "60f5fa2a2e60be6f79a5",
+    "url": "/static/js/main.57e9b96d.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "f0fa1fa97e2fbd32aab2",
-    "url": "/static/js/2.00cae8e3.chunk.js"
+    "revision": "67c99e4888e6e2934b9f",
+    "url": "/static/js/2.04376a86.chunk.js"
   },
   {
     "revision": "40d7fa34e465399c36ca5bcf2b5ddf4b",
@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/static/media/skype-logo.8ee54220.svg"
   },
   {
-    "revision": "43628cf70654a6367e61765a4fa3f62d",
+    "revision": "8d5a2b8a1548f90901763b96df1c1c90",
     "url": "/index.html"
   }
 ];
