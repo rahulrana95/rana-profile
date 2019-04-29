@@ -1,11 +1,12 @@
 import React from "react";
 import { render } from "react-snapshot";
+import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-render(
+ReactDOM.render(
   <Router>
     <App />
   </Router>,
