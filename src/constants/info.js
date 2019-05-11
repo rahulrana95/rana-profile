@@ -4,6 +4,7 @@ import PersonalBlogs from "../components/PersonalBlogs";
 import Skills from "../components/Skills";
 import Portfolio from "../components/Portfolio";
 import Mycv from "../components/Mycv";
+import Home from "../components/Home";
 
 export default {
   profile: {
@@ -13,10 +14,15 @@ export default {
   },
   menu: [
     {
-      label: "PERSONAL BLOGS",
+      label: "HOME",
       route: "/",
-      component: PersonalBlogs,
-      exact: true
+      exact: true,
+      component: Home
+    },
+    {
+      label: "PERSONAL BLOGS",
+      route: "/blogs",
+      component: PersonalBlogs
     },
     {
       label: "PORTFOLIO",

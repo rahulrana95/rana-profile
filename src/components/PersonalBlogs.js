@@ -2,11 +2,30 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
+  text-align: left;
+  a {
+    color: black;
+  }
   .articles {
     text-align: left;
   }
   .articles li {
     list-style: none;
+    border: 1px solid grey;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+
+  .publishedon {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    display: flex;
+  }
+
+  h3 {
+    margin-top: 0px;
   }
 `;
 class PersonalBlogs extends Component {
@@ -17,6 +36,30 @@ class PersonalBlogs extends Component {
       dataIsLoading: true
     };
   }
+
+  formatDate(date) {
+    var monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ];
+
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+
+    return day + " " + monthNames[monthIndex] + " " + year;
+  }
+
   componentDidMount() {
     fetch(
       "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40rahulrana95"
@@ -54,17 +97,26 @@ class PersonalBlogs extends Component {
   render() {
     return (
       <Container>
-        <h3>Blogs/Articles</h3>
+        <h3>Blog</h3>
         {this.state.dataIsLoading ? <div>Loading ...</div> : null}
         <div className="articles">
           {this.state.mediumArticles.map(article => {
             return (
               <li>
                 {" "}
-                <h3>{article.title}</h3>
-                <img src={article.thumbnail} width="500px" />
-                <div>Published on : {article.pubDate}</div>
-                <a href={article.link}>Read Article</a>
+                <a href={article.link} target="_blank">
+                  {" "}
+                  <h3>{article.title}</h3>
+                  <img src={article.thumbnail} width="200px" />
+                </a>
+                <div className="publishedon">
+                  <span>
+                    Published on : {this.formatDate(new Date(article.pubDate))}
+                  </span>
+                  <a href={article.link} target="_blank">
+                    Read Article
+                  </a>
+                </div>
               </li>
             );
           })}

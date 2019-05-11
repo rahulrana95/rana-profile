@@ -6,9 +6,9 @@ import data from "../constants/info";
 const Container = styled.div`
   width: 75%;
   margin-left: 25%;
-  border: 1px solid red;
   padding: 50px;
   overflow: scroll;
+  background-color: #f3f3f3;
   right: 0;
   top: 0;
   padding: 50px;
@@ -22,7 +22,7 @@ class Content extends Component {
         {data.menu.map((menuItem, index) => {
           const Props = {};
           if (menuItem.exact) {
-            Props.exact=true;
+            Props.exact = true;
           }
           return (
             <Route
@@ -30,7 +30,6 @@ class Content extends Component {
               component={menuItem.component}
               key={index}
               {...Props}
-              
             />
           );
         })}

@@ -6,9 +6,12 @@ import colors from "../constants/colors";
 import ocean from "../images/ocean-bg.jpg";
 import profile from "../images/profile-pic.jpeg";
 import ln from "../images/linkedin-logo.svg";
-import insta from "../images/instagram-logo.svg";
-import skype from "../images/skype-logo.svg";
-import linkedinLogo from "../images/linkedin-logo.svg";
+import twitter from "../images/twitter-circular.svg";
+import facebook from "../images/facebook.svg";
+import linkedin from "../images/linkedin-circular.svg";
+// import medium from "../images/medium.svg";
+// import github from "../images/medium.svg";
+// import stackoverflow from "../images/stackoveflow.svg";
 
 const Container = styled.div`
   color: ${colors.primaryText};
@@ -41,7 +44,7 @@ const Container = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: red;
+    background-color: #161414;
     opacity: 0.6;
     z-index: -10;
   }
@@ -77,11 +80,6 @@ const Container = styled.div`
     position: relative;
   }
 
-  .ul li::hover {
-    cursor: pointer;
-    color: red !important;
-  }
-
   .activeLink:after {
     content: " ";
     display: block;
@@ -103,6 +101,47 @@ const Container = styled.div`
     }
 
     color: white !important;
+  }
+
+  .arrow:after {
+    content: " >";
+    right: 0;
+    color: white;
+  }
+
+  .arrow {
+    display: inline;
+  }
+
+  .child li a {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .child .ul li:hover {
+    border-left: 3px solid #e59595;
+    padding-left: 5px;
+    transition: padding 0.5s;
+  }
+
+  .get-in-touch {
+    margin-top: 80px;
+    padding-left: 40px;
+    margin-left: 0px;
+    list-style: none;
+    text-align: left;
+    position: relative;
+
+    li {
+      margin: 20px 0px 0px 20px;
+      margin-top: 0px;
+
+      img:hover {
+        width: 50px;
+        height: 50px;
+        transition: width 0.5s;
+        transition: height 0.5s;
+      }
+    }
   }
 `;
 
@@ -154,8 +193,7 @@ class SideMenu extends Component {
               className="ul"
               style={{
                 listStyle: "none",
-                textAlign: "left",
-                color: colors.primaryText
+                textAlign: "left"
               }}
             >
               {data.menu.map((menuItem, index) => {
@@ -169,12 +207,18 @@ class SideMenu extends Component {
                       }
                       onClick={() => console.log("Clicked route")}
                       style={{
-                        textDecoration: "none",
-                        color: "rgba(255,255,255,.6)"
+                        textDecoration: "none"
                       }}
                       to={menuItem.route}
                     >
                       {menuItem.label}
+                      <div
+                        className={
+                          window.location.pathname == menuItem.route
+                            ? "arrow"
+                            : ""
+                        }
+                      />
                     </NavLink>
                   </li>
                 );
@@ -182,8 +226,10 @@ class SideMenu extends Component {
             </ul>
           </div>
 
-          <div className="ul" style={{ textAlign: "left", marginLeft: "40px" }}>
-            <h4 style={{ marginLeft: "20px" }}>Get In Touch</h4>
+          <div className="get-in-touch" style={{ textAlign: "left" }}>
+            <span style={{ marginLeft: "20px", color: "rgba(255,255,255,.6)" }}>
+              Get In Touch
+            </span>
             <ul className="social">
               <li>
                 <a
@@ -191,19 +237,19 @@ class SideMenu extends Component {
                   target="_blank"
                   style={{ color: "white" }}
                 >
-                  <img src={linkedinLogo} width="50px" height="50px" />
+                  <img src={linkedin} width="40px" height="40px" />
                 </a>
               </li>
-              {/* <li>
+              <li>
                 <a href="https://www.facebook.com/3rahul4" target="_blank">
-                  Fb
+                  <img src={facebook} width="40px" height="40px" />
                 </a>
               </li>
               <li>
                 <a href="https://twitter.com/rahulrana_95" target="_blank">
-                  Tw
+                  <img src={twitter} width="40px" height="40px" />
                 </a>
-              </li> */}
+              </li>{" "}
             </ul>
           </div>
         </div>
